@@ -1,0 +1,21 @@
+version: '2'
+services:
+
+  flask:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./:/flask-react
+    depends_on:
+      - webpack-dev
+    command: [python, test_app/app.py]
+
+  webpack-dev:
+    ports:
+      - "2992:2992"
+      - "8080:8080"
+    build: .
+    volumes:
+      - ./:/flask-react
+    command: [npm, start]    

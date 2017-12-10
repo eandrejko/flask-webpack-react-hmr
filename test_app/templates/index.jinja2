@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <title>Test application</title>
+    {{ stylesheet_tag('app') | safe }}
+  </head>
+  <body>
+    <img src="{{ asset_url_for('./images/dog/no-idea.jpg') }}"
+         width="600" height="434" alt="No idea">
+         <div id="container">
+         </div>
+         {{ javascript_tag('app') | safe }}
+  </body>
+</html>
