@@ -29,6 +29,8 @@ To run:
 
 ## How It Works
 
+<img src="https://github.com/eandrejko/flask-webpack-react-hmr/raw/master/flask-webpack-react-hmr-example.gif" width="873" height="424" />
+
 During normal development, `docker-compose` is used to start _both_ Flask (the primary web server) and the `webpack-dev-server` which serves the compiled Javascript and handles the hot module reloading on changes.
 
 Since `webpack-dev-server` is installed and runs within a Docker container, packages should be installed by running inside of the container:
