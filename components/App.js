@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { counter: 0 };
-  }
+  state = { counter: 0 };
 
   componentDidMount() {
     this.interval = setInterval(this.increment.bind(this), 1000);
