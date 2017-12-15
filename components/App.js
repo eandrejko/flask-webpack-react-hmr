@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Foods } from './Foods';
 
 export default class App extends Component {
   state = { counter: 0 };
@@ -26,6 +27,7 @@ export default class App extends Component {
         <div>
           {counter}
         </div>
+        <Foods />
       </header>
     );
   }
