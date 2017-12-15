@@ -9,5 +9,4 @@ export const entities = combineReducers({
 
 //- Selectors
 
-export const getFood = (state, food) => fromFoods.getFood(state.foods, food);
 export const getAllFoods = state => fromFoods.getAllFoods(state.foods);

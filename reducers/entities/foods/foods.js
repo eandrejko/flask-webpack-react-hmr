@@ -28,5 +28,4 @@ export function reducer(state = initialState, action) {
 }
 
 //- Selectors
-export const getFood = (state, food) => state.byId[food];
 export const getAllFoods = state => state.allIds.map(id => state.byId[id]);
