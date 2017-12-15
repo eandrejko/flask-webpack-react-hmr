@@ -13,7 +13,7 @@ const initialState = {
 };
 
 //- Reducer
-export default function foods(state = initialState, action) {
+export default function reducer(state = initialState, action) {
   switch (action.type) {
     case FOOD_ADD:
       return state;
