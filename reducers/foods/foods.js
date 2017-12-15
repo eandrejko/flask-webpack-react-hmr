@@ -9,6 +9,7 @@ export const addFood = food => ({
 
 //- State
 const initialState = {
+  allIds: [],
   byIds: {},
 };
 
@@ -16,7 +17,11 @@ const initialState = {
 export default function reducer(state = initialState, action) {
   switch (action.type) {
     case FOOD_ADD:
-      return state;
+      return {
+        ...state,
+        allIds: [...state.allIds, food.id],
+        byIds: { ...state.byIds, [food.id]: food },
+      };
     default:
       return state;
   }
