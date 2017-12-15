@@ -41,4 +41,4 @@ docker-compose run webpack-dev npm i <foo> --save-dev
 
 ## Contributing
 
-This is a minimal example, pull requests are always welcome.
+- [JavaScript style guide](docs/js_style_guide.md)
