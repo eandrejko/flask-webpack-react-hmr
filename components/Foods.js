@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as fromFoods from '../reducers/foods/api';
+import * as selectors from '../reducers';
 
 class Foods extends Component {
   render() {
-    const { addFood } = this.props;
-    console.log(addFood);
+    const { addFood, foods } = this.props;
     const food = {
       id: 1,
       name: 'spinach',
@@ -14,12 +14,21 @@ class Foods extends Component {
     return (
       <div className="container">
         <div onClick={() => addFood(food)}>Add a food</div>
+        <ul>
+          {foods.map((food, i) =>
+            <li key={i}>
+              {food.name}
+            </li>,
+          )}
+        </ul>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({ foods: 'pasta' });
+const mapStateToProps = state => ({
+  foods: selectors.getAllFoods(state),
+});
 
 const mapDispatchToProps = {
   addFood: fromFoods.addFood,

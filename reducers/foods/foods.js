@@ -10,17 +10,17 @@ export const addFood = food => ({
 //- State
 const initialState = {
   allIds: [],
-  byIds: {},
+  byId: {},
 };
 
 //- Reducer
-export default function reducer(state = initialState, action) {
+export function reducer(state = initialState, action) {
   switch (action.type) {
     case FOOD_ADD:
       return {
         ...state,
         allIds: [...state.allIds, action.food.id],
-        byIds: { ...state.byIds, [action.food.id]: action.food },
+        byId: { ...state.byId, [action.food.id]: action.food },
       };
     default:
       return state;
@@ -29,3 +29,4 @@ export default function reducer(state = initialState, action) {
 
 //- Selectors
 export const getFood = (state, food) => state.byId[food];
+export const getAllFoods = state => state.allIds.map(id => state.byId[id]);

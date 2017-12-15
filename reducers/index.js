@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux';
-import foods from './foods/foods';
+import * as fromFoods from './foods/foods';
 
 const rootReducer = combineReducers({
-  foods,
+  foods: fromFoods.reducer,
 });
 
 export default rootReducer;
+
+//- Selectors
+export const getFood = (state, food) => fromFoods.getFood(state.foods, food);
+export const getAllFoods = state => fromFoods.getAllFoods(state.foods);
