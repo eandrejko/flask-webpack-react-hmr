@@ -17,6 +17,14 @@ selector name: get<Noun>
 //- Reducer
 //- Selectors
 
+### Redux Devtools
+
+This Chrome extension you to interact with the redux store and step through
+actions. It is quite helpful.
+
+[download
+link](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
+
 ## Prettier
 
 The package `prettier` is an autoformatter. Here's a link to their
