@@ -22,7 +22,7 @@ export default class App extends Component {
 
     return (
       <header>
-        <div>Webpack + React 15 + Flask-Webpack + Docker</div>
+        <div>Webpack + React 16 + Flask-Webpack + Docker</div>
         <div>
           {counter}
         </div>
