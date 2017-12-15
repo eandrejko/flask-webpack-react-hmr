@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as fromFoods from '../reducers/foods/api';
-import * as selectors from '../reducers';
+import * as fromFoods from '../reducers/entities/foods/api';
+import * as entitySelectors from '../reducers/entities';
 
 class Foods extends Component {
   render() {
@@ -27,7 +27,7 @@ class Foods extends Component {
 }
 
 const mapStateToProps = state => ({
-  foods: selectors.getAllFoods(state),
+  foods: entitySelectors.getAllFoods(state.entities),
 });
 
 const mapDispatchToProps = {
