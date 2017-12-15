@@ -19,8 +19,8 @@ export default function reducer(state = initialState, action) {
     case FOOD_ADD:
       return {
         ...state,
-        allIds: [...state.allIds, food.id],
-        byIds: { ...state.byIds, [food.id]: food },
+        allIds: [...state.allIds, action.food.id],
+        byIds: { ...state.byIds, [action.food.id]: action.food },
       };
     default:
       return state;
