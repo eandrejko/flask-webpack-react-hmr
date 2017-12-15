@@ -1,5 +1,22 @@
 # JavaScript Style Guide
 
+## Redux
+
+_Inspired by [Kyle Poole](https://medium.com/@kylpo/redux-best-practices-eef55a20cc72)_
+
+### Names
+
+action name: <NOUN>_<VERB>
+action creator name: <verb><Noun>
+selector name: get<Noun>
+
+### File structure
+
+//- Actions
+//- State
+//- Reducer
+//- Selectors
+
 ## Prettier
 
 The package `prettier` is an autoformatter. Here's a link to their

@@ -42,3 +42,7 @@ docker-compose run webpack-dev npm i <foo> --save-dev
 ## Contributing
 
 - [JavaScript style guide](docs/js_style_guide.md)
+
+### Technologies used
+- React
+- Redux
