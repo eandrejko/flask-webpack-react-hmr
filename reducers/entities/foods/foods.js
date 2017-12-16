@@ -7,7 +7,6 @@ const FOOD_ADD_FAIL = 'FOOD_ADD_FAIL';
 export const addFood = food => ({
   types: [FOOD_ADD_REQUEST, FOOD_ADD_SUCCESS, FOOD_ADD_FAIL],
   swagger: api => {
-    console.log('api', api);
     return api.default.get_foods_resource().then(result => result.obj);
   },
 });
@@ -33,8 +32,8 @@ export function reducer(state = initialState, action) {
     case FOOD_ADD_SUCCESS:
       return {
         ...state,
-        allIds: [...state.allIds, action.food.id],
-        byId: { ...state.byId, [action.food.id]: action.food },
+        allIds: [...state.allIds, action.result.id],
+        byId: { ...state.byId, [action.result.id]: action.result },
         loading: true,
       };
     case FOOD_ADD_FAIL:
