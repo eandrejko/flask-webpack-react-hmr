@@ -4,18 +4,11 @@ import * as fromImage from '../reducers/ui/image/api';
 import * as uiSelectors from '../reducers/ui';
 import noIdea from '../assets/images/dog/no-idea.jpg';
 
-class Image extends Component {
-  render() {
-    const { isImageShown, toggleImage } = this.props;
-
-    return (
-      <div className="container">
-        <div onClick={toggleImage}>Toggle image</div>
-        {isImageShown && <img src={noIdea} />}
-      </div>
-    );
-  }
-}
+const Image = ({ isImageShown, toggleImage }) =>
+  <div className="container">
+    <div onClick={toggleImage}>Toggle image</div>
+    {isImageShown && <img src={noIdea} />}
+  </div>;
 
 const mapStateToProps = state => ({
   isImageShown: uiSelectors.getIsImageShown(state.ui),
