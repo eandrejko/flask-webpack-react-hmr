@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as fromImage from '../reducers/ui/image/api';
-import noIdea from '../../assets/images/dog/no-idea.jpg';
+import * as uiSelectors from '../reducers/ui';
+import noIdea from '../assets/images/dog/no-idea.jpg';
 
 const Image = ({ isImageShown, toggleImage }) => (
   <div className="container">
@@ -11,7 +12,7 @@ const Image = ({ isImageShown, toggleImage }) => (
 );
 
 const mapStateToProps = state => ({
-  isImageShown: fromImage.getIsImageShown(state),
+  isImageShown: uiSelectors.getIsImageShown(state.ui),
 });
 
 const mapDispatchToProps = {

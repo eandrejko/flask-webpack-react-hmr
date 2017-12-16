@@ -20,10 +20,6 @@ export class Counter extends Component {
   render() {
     const { counter } = this.state;
 
-    return (
-      <div>
-        {counter}
-      </div>
-    );
+    return <div>{counter}</div>;
   }
 }
