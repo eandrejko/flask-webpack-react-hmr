@@ -6,7 +6,7 @@ module.exports = {
   entry: {
     app: [
       'babel-polyfill',
-      './index.js',
+      './frontend/index.js',
       path.resolve(__dirname, 'assets/styles/main.css'),
     ],
   },
