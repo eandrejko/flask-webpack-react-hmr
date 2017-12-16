@@ -1,9 +1,11 @@
 //- Action Constants
+
 const FOOD_ADD_REQUEST = 'FOOD_ADD_REQUEST';
 const FOOD_ADD_SUCCESS = 'FOOD_ADD_SUCCESS';
 const FOOD_ADD_FAIL = 'FOOD_ADD_FAIL';
 
 //- Actions
+
 export const addFood = food => ({
   types: [FOOD_ADD_REQUEST, FOOD_ADD_SUCCESS, FOOD_ADD_FAIL],
   swagger: async api => {
@@ -13,6 +15,7 @@ export const addFood = food => ({
 });
 
 //- State
+
 const initialState = {
   allIds: [],
   byId: {},
@@ -22,6 +25,7 @@ const initialState = {
 };
 
 //- Reducer
+
 export function reducer(state = initialState, action) {
   switch (action.type) {
     case FOOD_ADD_REQUEST:
@@ -53,4 +57,5 @@ export function reducer(state = initialState, action) {
 }
 
 //- Selectors
+
 export const getAllFoods = state => state.allIds.map(id => state.byId[id]);
