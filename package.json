@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --progress --inline --hot --disable-host-check --host 0.0.0.0"
+    "start": "webpack-dev-server --progress --inline --hot --disable-host-check --host 0.0.0.0",
+    "lint": "./node_modules/eslint/bin/eslint.js frontend"
   },
   "keywords": [],
   "author": "",
@@ -16,10 +17,18 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-react-hmre": "^1.1.1",
     "css-loader": "^0.28.7",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "image-webpack-loader": "^3.4.2",
     "manifest-revision-webpack-plugin": "^0.4.1",
+    "prettier": "^1.9.2",
     "style-loader": "^0.19.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
