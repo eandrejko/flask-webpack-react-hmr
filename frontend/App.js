@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Foods } from './Foods';
-import { Image } from './Image';
-import { Counter } from './Counter';
+import { Counter, Foods, Image } from './components';
 
 export const App = () =>
   <header>

@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import swaggerClient from 'redux-swagger-client';
-import { App } from './components/App';
+import { App } from './App';
 import { rootReducer } from './reducers';
 
 const store = createStore(
