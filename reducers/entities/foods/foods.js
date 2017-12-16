@@ -6,8 +6,9 @@ const FOOD_ADD_FAIL = 'FOOD_ADD_FAIL';
 //- Actions
 export const addFood = food => ({
   types: [FOOD_ADD_REQUEST, FOOD_ADD_SUCCESS, FOOD_ADD_FAIL],
-  swagger: api => {
-    return api.default.get_foods_resource().then(result => result.obj);
+  swagger: async api => {
+    const response = await api.default.get_foods_resource();
+    return response.obj;
   },
 });
 
