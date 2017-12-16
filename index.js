@@ -3,13 +3,18 @@ import React from 'react';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import swaggerClient from 'redux-swagger-client';
 import App from './components/App';
 import { rootReducer } from './reducers';
 
 const store = createStore(
   rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(thunk, clientMiddleware(null)),
+  applyMiddleware(
+    thunk,
+    clientMiddleware(null),
+    swaggerClient({ url: 'http://localhost:5000/api/swagger.json' }),
+  ),
 );
 
 render(

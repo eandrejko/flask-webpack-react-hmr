@@ -32,6 +32,7 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-devtools": "^3.4.1",
+    "redux-swagger-client": "^2.1.1",
     "redux-thunk": "^2.2.0"
   }
 }
