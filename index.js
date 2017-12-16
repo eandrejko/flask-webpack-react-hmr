@@ -50,6 +50,7 @@ export default function clientMiddleware(client) {
         error => next({ ...rest, error, type: FAILURE }),
       )
       .catch(error => {
+        console.error(error);
         next({ ...rest, error, type: FAILURE });
       });
   };
