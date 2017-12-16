@@ -17,8 +17,8 @@ const initialState = {
   allIds: [],
   byId: {},
   error: false,
-  loading: false,
   loaded: false,
+  loading: false,
 };
 
 //- Reducer
