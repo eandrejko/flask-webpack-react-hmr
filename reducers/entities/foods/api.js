@@ -1,6 +1,5 @@
 import * as fromFoods from './foods';
 
-export const addFood = () =>
-  async function(dispatch, getState) {
-    dispatch(fromFoods.addFood());
-  };
+export const addFood = () => dispatch => {
+  dispatch(fromFoods.addFood());
+};
