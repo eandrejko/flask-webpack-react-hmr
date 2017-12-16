@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import * as fromImage from '../reducers/ui/image/api';
 import noIdea from '../../assets/images/dog/no-idea.jpg';
