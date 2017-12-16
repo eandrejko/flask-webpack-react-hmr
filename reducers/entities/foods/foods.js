@@ -26,6 +26,7 @@ export function reducer(state = initialState, action) {
     case FOOD_ADD_REQUEST:
       return {
         ...state,
+        error: false,
         loading: true,
         loaded: false,
       };
@@ -34,7 +35,9 @@ export function reducer(state = initialState, action) {
         ...state,
         allIds: [...state.allIds, action.result.id],
         byId: { ...state.byId, [action.result.id]: action.result },
-        loading: true,
+        error: false,
+        loaded: true,
+        loading: false,
       };
     case FOOD_ADD_FAIL:
       return {
