@@ -12,7 +12,7 @@ def create_app(settings_override=None):
     :type settings_override: dict
     :return: Flask app
     """
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='static')
 
     params = {
         'DEBUG': True,
@@ -38,4 +38,4 @@ def index():
 
 
 if __name__ == '__main__':
-    run_simple('0.0.0.0', 5000, app, use_reloader=True, use_debugger=True)
+    app.run('0.0.0.0', 5000, app, use_reloader=True, use_debugger=True)
