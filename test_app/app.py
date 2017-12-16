@@ -1,3 +1,6 @@
+import uuid
+import random
+
 from flask import Blueprint, Flask, render_template
 from flask_restplus import Api, Resource
 from werkzeug.serving import run_simple
@@ -40,7 +43,11 @@ app.register_blueprint(blueprint)
 @api.route('/foods')
 class FoodsResource(Resource):
     def get(self):
-        return {'id': 1, 'name': 'pasta'}
+        foods = [
+            'pasta', 'artichoke', 'green beans', 'falafel', 'eggplant',
+            'olives', 'cheese', 'eggs',
+        ]
+        return {'id': str(uuid.uuid4()), 'name': random.choice(foods)}
 
 
 @app.route('/')
