@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as fromImage from '../reducers/ui/image/api';
 import * as uiSelectors from '../reducers/ui';
+import noIdea from '../assets/images/dog/no-idea.jpg';
 
 class Image extends Component {
   render() {
@@ -10,7 +11,7 @@ class Image extends Component {
     return (
       <div className="container">
         <div onClick={toggleImage}>Toggle image</div>
-        {isImageShown && <p>image</p>}
+        {isImageShown && <img src={noIdea} />}
       </div>
     );
   }
