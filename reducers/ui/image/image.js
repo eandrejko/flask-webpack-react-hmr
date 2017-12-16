@@ -8,7 +8,7 @@ export const toggleImage = () => ({
 
 //- State
 const initialState = {
-  isImageShown: false,
+  isImageShown: true,
 };
 
 //- Reducer
