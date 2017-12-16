@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as fromFoods from '../reducers/entities/foods/api';
-import * as entitySelectors from '../reducers/entities';
 
 const Foods = ({ addFood, foods }) =>
   <div className="container">
@@ -16,7 +15,7 @@ const Foods = ({ addFood, foods }) =>
   </div>;
 
 const mapStateToProps = state => ({
-  foods: entitySelectors.getAllFoods(state.entities),
+  foods: fromFoods.getAllFoods(state),
 });
 
 const mapDispatchToProps = {

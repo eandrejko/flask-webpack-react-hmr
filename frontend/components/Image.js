@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as fromImage from '../reducers/ui/image/api';
-import * as uiSelectors from '../reducers/ui';
 import noIdea from '../../assets/images/dog/no-idea.jpg';
 
 const Image = ({ isImageShown, toggleImage }) =>
@@ -11,7 +10,7 @@ const Image = ({ isImageShown, toggleImage }) =>
   </div>;
 
 const mapStateToProps = state => ({
-  isImageShown: uiSelectors.getIsImageShown(state.ui),
+  isImageShown: fromImage.getIsImageShown(state),
 });
 
 const mapDispatchToProps = {
