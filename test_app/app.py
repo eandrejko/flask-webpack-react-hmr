@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Blueprint, Flask, render_template
+from flask_restplus import Api, Resource
 from werkzeug.serving import run_simple
 
 from flask_webpack import Webpack
@@ -30,6 +31,16 @@ def create_app(settings_override=None):
 
 
 app = create_app()
+
+blueprint = Blueprint('api', __name__, url_prefix='/api')
+api = Api(blueprint)
+app.register_blueprint(blueprint)
+
+
+@api.route('/foods')
+class FoodsResource(Resource):
+    def get(self):
+        return {'id': 1, 'name': 'pasta'}
 
 
 @app.route('/')
