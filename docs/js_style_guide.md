@@ -2,9 +2,27 @@
 
 ## Redux
 
-_Inspired by [Kyle Poole](https://medium.com/@kylpo/redux-best-practices-eef55a20cc72)_
+### State shape
+
+We follow the normalized state shape describedin the Redux docs: [Normalizing
+State
+Shape](https://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html).
+
+```
+  entities : {
+        entityType1 : {....},
+        entityType2 : {....}
+    }
+    ui : {
+        uiSection1 : {....},
+        uiSection2 : {....}
+    }
+}
+```
 
 ### Names
+
+_Inspired by [Kyle Poole](https://medium.com/@kylpo/redux-best-practices-eef55a20cc72)_
 
 action name: <NOUN>_<VERB>
 action creator name: <verb><Noun>
