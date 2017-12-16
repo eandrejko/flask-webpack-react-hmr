@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Foods } from './Foods';
+import { Image } from './Image';
 
 export default class App extends Component {
   state = { counter: 0 };
@@ -28,6 +29,7 @@ export default class App extends Component {
           {counter}
         </div>
         <Foods />
+        <Image isImageShown={false} toggleImage={''} />
       </header>
     );
   }
