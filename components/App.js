@@ -29,7 +29,7 @@ export default class App extends Component {
           {counter}
         </div>
         <Foods />
-        <Image isImageShown={false} toggleImage={''} />
+        <Image />
       </header>
     );
   }

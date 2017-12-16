@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import * as uiSelectors from '../reducers/ui';
+import * as fromImage from '../reducers/ui/image/api';
+import * as uiSelectors from '../reducers/ui';
 
 class Image extends Component {
   render() {
@@ -16,13 +17,13 @@ class Image extends Component {
 }
 
 const mapStateToProps = state => ({
-  // foods: entitySelectors.getAllFoods(state.entities),
+  isImageShown: uiSelectors.getIsImageShown(state.ui),
 });
 
 const mapDispatchToProps = {
-  // addFood: fromFoods.addFood,
+  toggleImage: fromImage.toggleImage,
 };
 
-// const FoodsConnected = connect(mapStateToProps, mapDispatchToProps)(Foods);
+const ImageConnected = connect(mapStateToProps, mapDispatchToProps)(Image);
 
-export { Image };
+export { ImageConnected as Image };

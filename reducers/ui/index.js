@@ -9,4 +9,4 @@ export const ui = combineReducers({
 
 //- Selectors
 
-export const getIsImageShown = state => fromImage.getImageShown(state.ui);
+export const getIsImageShown = state => fromImage.getIsImageShown(state.image);
