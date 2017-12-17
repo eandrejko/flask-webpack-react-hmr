@@ -5,13 +5,13 @@ import * as fromFoods from '../reducers/entities/foods/api';
 
 Foods.propTypes = {
   addFood: PropTypes.func.isRequired,
-  foods: PropTypes.array.isRequired,
+  foods: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 const Foods = ({ addFood, foods }) => (
   <div className="container">
     <div onClick={addFood}>Add a food</div>
-    <ul>{foods.map((food, i) => <li key={i}>{food.name}</li>)}</ul>
+    <ul>{foods.map(food => <li key={food.name}>{food.name}</li>)}</ul>
   </div>
 );
 
