@@ -1,6 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as fromFoods from '../reducers/entities/foods/api';
+
+Foods.propTypes = {
+  addFood: PropTypes.func.isRequired,
+  foods: PropTypes.array.isRequired,
+};
 
 const Foods = ({ addFood, foods }) => (
   <div className="container">

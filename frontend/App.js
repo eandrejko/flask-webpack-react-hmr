@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Counter, Foods, Image } from './components';
 
 export const App = () => (
