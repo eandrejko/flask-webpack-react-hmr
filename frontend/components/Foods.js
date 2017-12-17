@@ -8,13 +8,18 @@ const Foods = ({ addFood, foods }) => (
     <div onClick={addFood} onKeyDown={addFood} role="button" tabIndex={0}>
       Add a food
     </div>
-    <ul>{foods.map(food => <li key={food.name}>{food.name}</li>)}</ul>
+    <ul>{foods.map(food => <li key={food.id}>{food.name}</li>)}</ul>
   </div>
 );
 
 Foods.propTypes = {
   addFood: PropTypes.func.isRequired,
-  foods: PropTypes.arrayOf(PropTypes.string).isRequired,
+  foods: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+    }),
+  ).isRequired,
 };
 
 const mapStateToProps = state => ({
