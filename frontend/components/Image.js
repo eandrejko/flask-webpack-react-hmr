@@ -11,8 +11,15 @@ Image.propTypes = {
 
 const Image = ({ isImageShown, toggleImage }) => (
   <div className="container">
-    <div onClick={toggleImage}>Toggle image</div>
-    {isImageShown && <img src={noIdea} />}
+    <div
+      onClick={toggleImage}
+      onKeyDown={toggleImage}
+      role="button"
+      tabIndex={0}
+    >
+      Toggle image
+    </div>
+    {isImageShown && <img alt="dog typing" src={noIdea} />}
   </div>
 );
 

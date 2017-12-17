@@ -10,7 +10,9 @@ Foods.propTypes = {
 
 const Foods = ({ addFood, foods }) => (
   <div className="container">
-    <div onClick={addFood}>Add a food</div>
+    <div onClick={addFood} onKeyDown={addFood} role="button" tabIndex={0}>
+      Add a food
+    </div>
     <ul>{foods.map(food => <li key={food.name}>{food.name}</li>)}</ul>
   </div>
 );

@@ -7,14 +7,14 @@ export class Counter extends Component {
     this.interval = setInterval(this.increment.bind(this), 1000);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   increment() {
     this.setState(({ counter }) => {
       return { counter: counter + 1 };
     });
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
   }
 
   render() {
