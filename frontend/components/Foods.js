@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as fromFoods from '../reducers/entities/foods/api';
 
-Foods.propTypes = {
-  addFood: PropTypes.func.isRequired,
-  foods: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
-
 const Foods = ({ addFood, foods }) => (
   <div className="container">
     <div onClick={addFood} onKeyDown={addFood} role="button" tabIndex={0}>
@@ -16,6 +11,11 @@ const Foods = ({ addFood, foods }) => (
     <ul>{foods.map(food => <li key={food.name}>{food.name}</li>)}</ul>
   </div>
 );
+
+Foods.propTypes = {
+  addFood: PropTypes.func.isRequired,
+  foods: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 const mapStateToProps = state => ({
   foods: fromFoods.getAllFoods(state),

@@ -4,11 +4,6 @@ import { connect } from 'react-redux';
 import * as fromImage from '../reducers/ui/image/api';
 import noIdea from '../../assets/images/dog/no-idea.jpg';
 
-Image.propTypes = {
-  isImageShown: PropTypes.bool.isRequired,
-  toggleImage: PropTypes.func.isRequired,
-};
-
 const Image = ({ isImageShown, toggleImage }) => (
   <div className="container">
     <div
@@ -22,6 +17,11 @@ const Image = ({ isImageShown, toggleImage }) => (
     {isImageShown && <img alt="dog typing" src={noIdea} />}
   </div>
 );
+
+Image.propTypes = {
+  isImageShown: PropTypes.bool.isRequired,
+  toggleImage: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = state => ({
   isImageShown: fromImage.getIsImageShown(state),
