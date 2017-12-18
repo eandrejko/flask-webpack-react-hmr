@@ -10,10 +10,7 @@ import { rootReducer } from './reducers';
 const store = createStore(
   rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-  applyMiddleware(
-    thunk,
-    swaggerClient({ url: 'http://localhost:5000/api/swagger.json' }),
-  ),
+  applyMiddleware(thunk, swaggerClient({ url: '/api/swagger.json' })),
 );
 
 render(
