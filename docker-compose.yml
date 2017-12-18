@@ -6,7 +6,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./:/flask-react
+      - ./:/fork-project
     depends_on:
       - webpack-dev
     command: [python, test_app/app.py]
@@ -17,5 +17,5 @@ services:
       - "8080:8080"
     build: .
     volumes:
-      - ./:/flask-react
+      - ./:/fork-project
     command: [npm, start]    

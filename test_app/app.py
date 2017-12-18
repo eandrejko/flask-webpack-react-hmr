@@ -1,4 +1,8 @@
-from flask import Flask, render_template
+import uuid
+import random
+
+from flask import Blueprint, Flask, render_template
+from flask_restplus import Api, Resource
 from werkzeug.serving import run_simple
 
 from flask_webpack import Webpack
@@ -12,7 +16,7 @@ def create_app(settings_override=None):
     :type settings_override: dict
     :return: Flask app
     """
-    app = Flask(__name__)
+    app = Flask(__name__, static_folder='static')
 
     params = {
         'DEBUG': True,
@@ -31,6 +35,20 @@ def create_app(settings_override=None):
 
 app = create_app()
 
+blueprint = Blueprint('api', __name__, url_prefix='/api')
+api = Api(blueprint)
+app.register_blueprint(blueprint)
+
+
+@api.route('/foods')
+class FoodsResource(Resource):
+    def get(self):
+        foods = [
+            'pasta', 'artichoke', 'green beans', 'falafel', 'eggplant',
+            'olives', 'cheese', 'eggs',
+        ]
+        return {'id': str(uuid.uuid4()), 'name': random.choice(foods)}
+
 
 @app.route('/')
 def index():
@@ -38,4 +56,4 @@ def index():
 
 
 if __name__ == '__main__':
-    run_simple('0.0.0.0', 5000, app, use_reloader=True, use_debugger=True)
+    app.run('0.0.0.0', 5000, app, use_reloader=True, use_debugger=True)

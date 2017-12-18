@@ -1,1 +1,1 @@
-{"assets":{"./images/dog/no-idea.jpg":"a8dc30b17a8cea4cb492d51f832c09fc.jpg","app.js":"build.js","app.css":"style.css"},"publicPath":"http://localhost:8080/static/"}
+{"assets":{"app.js":"build.js","app.css":"style.css"},"publicPath":"http://localhost:8080/static/"}
