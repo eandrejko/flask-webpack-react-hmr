@@ -1,5 +1,48 @@
 # JavaScript Style Guide
 
+## Redux
+
+### State shape
+
+We follow the normalized state shape describedin the Redux docs: [Normalizing
+State
+Shape](https://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html).
+
+```
+  entities : {
+        entityType1 : {....},
+        entityType2 : {....}
+    }
+    ui : {
+        uiSection1 : {....},
+        uiSection2 : {....}
+    }
+}
+```
+
+### Names
+
+_Inspired by [Kyle Poole](https://medium.com/@kylpo/redux-best-practices-eef55a20cc72)_
+
+action name: <NOUN>_<VERB>
+action creator name: <verb><Noun>
+selector name: get<Noun>
+
+### File structure
+
+//- Actions
+//- State
+//- Reducer
+//- Selectors
+
+### Redux Devtools
+
+This Chrome extension you to interact with the redux store and step through
+actions. It is quite helpful.
+
+[download
+link](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
+
 ## Prettier
 
 The package `prettier` is an autoformatter. Here's a link to their

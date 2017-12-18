@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class App extends Component {
+export class Counter extends Component {
   state = { counter: 0 };
 
   componentDidMount() {
@@ -21,12 +21,9 @@ export default class App extends Component {
     const { counter } = this.state;
 
     return (
-      <header>
-        <div>Webpack + React 16 + Flask-Webpack + Docker</div>
-        <div>
-          {counter}
-        </div>
-      </header>
+      <div>
+        {counter}
+      </div>
     );
   }
 }

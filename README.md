@@ -42,3 +42,15 @@ docker-compose run webpack-dev npm i <foo> --save-dev
 ## Contributing
 
 - [JavaScript style guide](docs/js_style_guide.md)
+
+### Technologies used
+
+#### Backend
+- Flask
+- [Flask RestPlus](https://github.com/noirbizarre/flask-restplus)
+
+#### Frontend
+- React
+- Redux
+- [Redux Thunk](https://github.com/gaearon/redux-thunk)
+- [Redux Swagger Client](https://github.com/noh4ck/redux-swagger-client)
